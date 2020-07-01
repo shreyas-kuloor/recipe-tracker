@@ -14,7 +14,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    name: Build API
+    name: Build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,13 +29,6 @@ jobs:
     - name: Build project
       run: npm run build
 
-  tests:
-    name: Run Tests
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-
     - name: Run tests
       run: npm run test
 
@@ -44,4 +37,3 @@ jobs:
       with:
         name: coverage-report
         path: coverage/src/index.html
-
