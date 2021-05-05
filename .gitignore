@@ -9,3 +9,7 @@ build
 
 *.log*
 logs/
+
+.env
+
+mongodb_data_container
